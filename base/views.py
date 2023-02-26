@@ -27,7 +27,10 @@ def loginPage(request):
 # VIEW FOR REGISTER PAGE (pick which type of user you are registering as)
 #-----------------------------------------------------------------------------------------------------------------
 def registerPage(request):
-    return render(request, 'base/registerPage.html') #returns register page
+     if request.user.is_authenticated: #if the user is authenticated
+        return redirect('homePage') 
+     else:
+        return render(request, 'base/registerPage.html') #returns register page
 #-----------------------------------------------------------------------------------------------------------------
 
 
@@ -99,6 +102,7 @@ def registerUnlimited(request):
 
 # VIEW Home Page (entered Portal)
 #-----------------------------------------------------------------------------------------------------------------
+@login_required(login_url='loginPage')
 def homePage(request):
     return render(request, 'base/homePage.html')
 #-----------------------------------------------------------------------------------------------------------------
@@ -126,6 +130,7 @@ def loginPage(request):
 
 # VIEW FOR LOG OUT
 #-----------------------------------------------------------------------------------------------------------------
+@login_required(login_url='loginPage')
 def logoutUser(request):
     logout(request) #logout method from Django import
     return redirect('loginPage') # redirect user to back login page when a user logs out

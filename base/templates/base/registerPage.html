@@ -4,30 +4,77 @@
 
 {% block content %} <!-- Start Block -->
 
-<h1> Register Page </h1>
+<h1 class="text-center" style="color: #008bc8;">Register</h1>
 
-<!-- Row for Freemium box  -->
-<div class="container">
-    <div class="row bg-danger mt-5">
-        <div class="col">
-            <h1> Resister as a Freemium User </h1>
-            <a href="{% url 'registerFreemium' %}"> Register Freemium  </a>
+
+
+<div class="container mt-5">
+
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <a type="button"  class="btn btn-lg shadow-lg" href="{% url 'registerFreemium' %}" style="height: 100px; width: 300px; background-color: #008bc8; border-radius: 35px;">
+                <div style="font-weight: 900; color: white; font-size: 25px; margin-top: 25px;">
+                    Freemium Account
+                </div>
+            </a>
+            </div>
         </div>
-    </div>
 
-    <!-- Row for Premium box  -->
-    <div class="row bg-danger mt-5">
-        <div class="col">
-            <h1> Resister as a Premium User </h1>
-            <a href="{% url 'registerPremium' %}"> Register Premium </a>    
+        <div class="row mt-5">
+            <div class="col d-flex justify-content-center">
+                <a type="button"  class="btn btn-lg shadow-lg" href="{% url 'registerPremium' %}" style="height: 100px; width: 300px; background-color: #008bc8; border-radius: 35px;">
+                    <div style="font-weight: 900; color: white; font-size: 25px; margin-top: 25px;">
+                        Premium Account
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
 
-<!-- Row for Unlimited box  -->
-    <div class="row bg-danger mt-5">
-        <div class="col">
-            <h1> Resister as a Unlimited User </h1>
-            <a href="{% url 'registerUnlimited' %}"> Register Unlimited  </a>
+        <div class="row mt-5">
+            <div class="col d-flex justify-content-center">
+                <a type="button"  class="btn btn-lg shadow-lg" href="{% url 'registerUnlimited' %}" style="height: 100px; width: 300px; background-color: #008bc8; border-radius: 35px;">
+                    <div style="font-weight: 900; color: white; font-size: 25px; margin-top: 25px;">
+                        Unlimited Account
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-4 d-flex justify-content-center">
+            <div style="
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            background: white;
+            opacity: .5;">
+            </div>
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+            <div style="
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            background: white;
+            opacity: .5;">
+            </div>
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+            <div style="
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            background: white;
+            opacity: .5;">
+            </div>
         </div>
     </div>
 </div>
