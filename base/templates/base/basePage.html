@@ -1,0 +1,28 @@
+{% extends 'base/main.html' %} <!-- Extends the parent template -->
+{% load static %} <!-- Allows us to use static files (css/images/javascript) -->
+
+
+{% block content %} <!-- Start Block -->
+
+<h1> Base Page </h1>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-3 bg-danger text-center mx-1">
+            <p> Register Here </p>
+            <a href="{% url 'registerPage' %}"> Register </a>
+        </div>
+        <div class="col-3 bg-danger text-center mx-1">
+            <p> Login Here </p>
+            <a href="{% url 'loginPage' %}"> Login here </a>
+        </div>
+        <div class="col-3 bg-danger text-center mx-1">
+            <p> Enter the Portal </p>
+            <a href="{% url 'homePage' %}"> Enter Portal </a>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %} <!-- End Block -->

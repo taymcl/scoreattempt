@@ -1,0 +1,29 @@
+{% extends 'base/main.html' %} <!-- Extends the parent template -->
+{% load static %} <!-- Allows us to use static files (css/images/javascript) -->
+
+
+{% block content %} <!-- Start Block -->
+
+<h1> Premium Register Page </h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form method="POST" action"">
+                {% csrf_token %}
+                {{form.username.label}}
+                {{form.username}}
+                {{form.password1.label}}
+                {{form.password1}}
+                {{form.password2.label}}
+                {{form.password2}}           
+                <input type="submit" name="Create User">
+                {{form.errors}} 
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %} <!-- End Block -->
