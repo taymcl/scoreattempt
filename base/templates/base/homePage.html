@@ -1,17 +1,47 @@
-{% extends 'main.html' %}
-{% load static %}
+{% extends 'base/main.html' %} <!-- Extends the parent template -->
+{% load static %} <!-- Allows us to use static files (css/images/javascript) -->
 
-{% block content %}
 
-<h1 style="color: blue;"> This is the home page </h1>
+{% block content %} <!-- Start Block -->
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <a href="{% url 'loginPage' %}"> Login </a>
-        </div>
+
+
+
+
+
+
+
+<!-- Hello Message -->
+<div class="row mt-5 p-5" style="background-color: #008bc8;">
+    <div class="col">
+        <h1 class = "text-center text-white" > Hello, {{request.user}}</h1>
     </div>
 </div>
 
 
-{% endblock %}
+<div class="container d-flex justify-content-center mt-5" style="background-color: #008bc8;">
+    <div class="row">
+        <div class="col text-white text-center">
+            <h1> User Portal </h1>
+            <h1>
+                {% for group in user.groups.all %}
+                {{ group.name }} User
+                {% endfor %}
+            <h1>
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 1000px;">
+    
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %} <!-- End Block -->

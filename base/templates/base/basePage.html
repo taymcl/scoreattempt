@@ -1,0 +1,51 @@
+{% extends 'base/main.html' %} <!-- Extends the parent template -->
+{% load static %} <!-- Allows us to use static files (css/images/javascript) -->
+
+
+{% block content %} <!-- Start Block -->
+
+
+
+
+<div class="container" style="margin-top: 80px;">
+    <div class="row">
+        <div class="col-6 d-flex justify-content-center mt-5">
+            <a type="button"  class="btn btn-lg shadow-lg" href="{% url 'loginPage' %}" style="height: 100px; width: 300px; background-color: #008bc8; border-radius: 35px;">
+                <div style="font-weight: 900; color: white; font-size: 25px; margin-top: 25px;">
+                    Login
+                </div>
+            </a>
+        </div>
+        <div class="col-6 d-flex justify-content-center mt-5">
+            <a type="button"  class="btn btn-lg shadow-lg" href="{% url 'registerPage' %}" style="height: 100px; width: 300px; background-color: #008bc8; border-radius: 35px;">
+                <div style="font-weight: 900; color: white; font-size: 25px; margin-top: 25px;">
+                    Register
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container bg-white" style="margin-top: 50px; opacity: .5; height: 400px; border-radius: 30px;">
+    <div class="row">
+        <div class="col text-center">
+            <p>  </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="margin-top: 1000px;">
+    <div class="row">
+        <div class="col">
+            <h1> Footer </h1>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %} <!-- End Block -->

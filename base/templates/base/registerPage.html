@@ -1,0 +1,84 @@
+{% extends 'base/main.html' %} <!-- Extends the parent template -->
+{% load static %} <!-- Allows us to use static files (css/images/javascript) -->
+
+
+{% block content %} <!-- Start Block -->
+
+<h1 class="text-center" style="color: #008bc8;">Register</h1>
+
+
+
+<div class="container mt-5">
+
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <a type="button"  class="btn btn-lg shadow-lg" href="{% url 'registerFreemium' %}" style="height: 100px; width: 300px; background-color: #008bc8; border-radius: 35px;">
+                <div style="font-weight: 900; color: white; font-size: 25px; margin-top: 25px;">
+                    Freemium Account
+                </div>
+            </a>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col d-flex justify-content-center">
+                <a type="button"  class="btn btn-lg shadow-lg" href="{% url 'registerPremium' %}" style="height: 100px; width: 300px; background-color: #008bc8; border-radius: 35px;">
+                    <div style="font-weight: 900; color: white; font-size: 25px; margin-top: 25px;">
+                        Premium Account
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col d-flex justify-content-center">
+                <a type="button"  class="btn btn-lg shadow-lg" href="{% url 'registerUnlimited' %}" style="height: 100px; width: 300px; background-color: #008bc8; border-radius: 35px;">
+                    <div style="font-weight: 900; color: white; font-size: 25px; margin-top: 25px;">
+                        Unlimited Account
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-4 d-flex justify-content-center">
+            <div style="
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            background: white;
+            opacity: .5;">
+            </div>
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+            <div style="
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            background: white;
+            opacity: .5;">
+            </div>
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+            <div style="
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            background: white;
+            opacity: .5;">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %} <!-- End Block -->
