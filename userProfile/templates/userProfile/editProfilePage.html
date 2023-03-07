@@ -1,0 +1,47 @@
+{% extends 'main.html' %} <!-- Extends the parent template -->
+{% load static %} <!-- Allows us to use static files (css/images/javascript) -->
+
+
+
+
+{% block content %}
+
+<h1> Edit Profile </h1>
+
+<!-- form -->
+<form method="POST" action"" enctype="multipart/form-data"  >
+  {% csrf_token %}
+  <div class="form-group p-1">
+      <label for="{{form.firstName.id_for_label}}" style="color: #008bc8; font-weight: 500;">first</label>
+      <input type="text" name="{{form.firstName.name}}" style="height: 50px;" class="form-control" id="{{form.firstName.id_for_label}}" value="{{form.firstName.value}}">
+  </div>
+
+  <div class="form-group p-1">
+      <label for="{{form.lastName.id_for_label}}" style="color: #008bc8; font-weight: 500;">last</label>
+      <input type="text" name="{{form.lastName.name}}" style="height: 50px;" class="form-control" id="{{form.lastName.id_for_label}}" value="{{form.lastName.value}}">
+  </div>
+
+  <div class="form-group p-1">
+    <label for="{{form.age.id_for_label}}" style="color: #008bc8; font-weight: 500;">Age</label>
+    <input type="number" name="{{form.age.name}}" style="height: 50px;" class="form-control" id="{{form.age.id_for_label}}" value="{{form.age.value}}">
+  </div>
+
+  <div class="form-group p-1">
+    <label for="{{form.bio.id_for_label}}" style="color: #008bc8; font-weight: 500;">Bio</label>
+    <input type="text" name="{{form.bio.name}}" style="height: 50px;" class="form-control" id="{{form.bio.id_for_label}}" value="{{form.bio.value}}">
+ </div>
+
+ <div class="form-group p-1">
+    <label for="{{form.profile_picture.id_for_label}}" style="color: #008bc8; font-weight: 500;">Profile Picture</label>
+    <input type="file" name="{{form.profile_picture.name}}" class="form-control-file" id="{{form.profile_picture.id_for_label}}">
+ </div> 
+  
+  
+        
+  <div class = "p-1">
+      <button type="submit" class="btn" style="background-color: #008bc8; color: white; font-weight: 500;">Change name </button>
+      {{form.errors}} 
+  </div>     
+</form>
+
+{% endblock %} 

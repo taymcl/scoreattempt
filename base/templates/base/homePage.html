@@ -1,47 +1,46 @@
-{% extends 'base/main.html' %} <!-- Extends the parent template -->
+{% extends 'main.html' %} <!-- Extends the parent template -->
 {% load static %} <!-- Allows us to use static files (css/images/javascript) -->
 
 
-{% block content %} <!-- Start Block -->
 
 
+{% block content %}
 
-
-
-
-
-
-<!-- Hello Message -->
-<div class="row mt-5 p-5" style="background-color: #008bc8;">
-    <div class="col">
-        <h1 class = "text-center text-white" > Hello, {{request.user}}</h1>
-    </div>
-</div>
-
-
-<div class="container d-flex justify-content-center mt-5" style="background-color: #008bc8;">
+<div class="container mt-5">
     <div class="row">
-        <div class="col text-white text-center">
-            <h1> User Portal </h1>
-            <h1>
-                {% for group in user.groups.all %}
-                {{ group.name }} User
-                {% endfor %}
-            <h1>
+        <div class="col text-center">
+            <h1 style="color: #008bc8; font-weight: 800;">Welcome to Shore Buddies</h1>
         </div>
     </div>
 </div>
 
-<div style="margin-top: 1000px;">
+
+
     
-</div>
+    <div class="container" style="margin-top: 80px;">
+        <div class="row">
+            <!-- Login Button -->
+            <div class="col-6 d-flex justify-content-center mt-5">
+                <a type="button"  class="btn btn-lg shadow-lg" href="{% url 'loginPage' %}" style="height: 100px; width: 300px; background-color: #008bc8; border-radius: 35px;">
+                    <div style="font-weight: 900; color: white; font-size: 25px; margin-top: 25px;">
+                        Login
+                    </div>
+                </a>
+            </div>
+            <!-- Register Button -->
+            <div class="col-6 d-flex justify-content-center mt-5">
+                <a type="button"  class="btn btn-lg shadow-lg" href="{% url 'registerPage' %}" style="height: 100px; width: 300px; background-color: #008bc8; border-radius: 35px;">
+                    <div style="font-weight: 900; color: white; font-size: 25px; margin-top: 25px;">
+                        Register
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 
 
 
 
 
 
-
-
-
-{% endblock %} <!-- End Block -->
+{% endblock %} 

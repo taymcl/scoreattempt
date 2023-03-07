@@ -1,0 +1,39 @@
+{% extends 'main.html' %} <!-- Extends the parent template -->
+{% load static %} <!-- Allows us to use static files (css/images/javascript) -->
+
+
+
+
+{% block content %}
+
+<h1> Community Page </h1>
+
+<a href="{% url 'addPost' %}"> add post </a>
+
+
+<h1> Posts: </h1>
+
+
+
+
+{% for post in posts %}
+<div class="card w-75 mb-3">
+  <div class="card-body">
+    <h5 class="card-title">{{ post.postTitle }}</h5>
+    <p class="card-text">{{ post.postBody }}</p>
+    User: <a href="#" class="btn btn-primary">{{ post.user }}</a>
+    <p><strong>Comments:</strong> {{ post.postComment }}</p>
+  </div>
+</div>
+{% empty %}
+<p>No posts yet.</p>
+{% endfor %}
+
+
+
+
+
+
+
+  
+{% endblock %} 
