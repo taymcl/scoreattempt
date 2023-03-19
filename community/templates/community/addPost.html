@@ -10,7 +10,7 @@
 <h1 class="text-center" style="font-weight: 800; font-size: 30px; color: #008bc8;"> Add a Post </h1>
 
 
-<form method="POST" action"" enctype="multipart/form-data"  >
+<form method="POST" action="" enctype="multipart/form-data"  >
     {% csrf_token %}
     <div class="form-group p-1">
         <label for="{{form.postTitle.id_for_label}}" style="color: #008bc8; font-weight: 500;">Title</label>
@@ -21,11 +21,6 @@
         <label for="{{form.postBody.id_for_label}}" style="color: #008bc8; font-weight: 500;">post body </label>
         <input type="text" name="{{form.postBody.name}}" style="height: 50px;" class="form-control" id="{{form.postBody.id_for_label}}" value="{{form.postBody.value}}">
     </div>
-
-    <div class="form-group p-1">
-      <label for="{{form.postComment.id_for_label}}" style="color: #008bc8; font-weight: 500;">post comment </label>
-      <input type="text" name="{{form.postComment.name}}" style="height: 50px;" class="form-control" id="{{form.postComment.id_for_label}}" value="{{form.postComment.value}}">
-   </div>
   
   
     <div class = "p-1">

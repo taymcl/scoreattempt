@@ -22,7 +22,19 @@
     <h5 class="card-title">{{ post.postTitle }}</h5>
     <p class="card-text">{{ post.postBody }}</p>
     User: <a href="#" class="btn btn-primary">{{ post.user }}</a>
-    <p><strong>Comments:</strong> {{ post.postComment }}</p>
+    <button class="show-comments">Show comments</button>
+      <button class="add-comment"><a href="{% url 'addComment' post.pk %}">Add comment</a></button>
+      <br>
+      <div class="comment-section">
+        {% for comment in post.comments.all|slice:":2" %}
+          <div class="comment">
+            <p>{{ comment.text }}</p>
+            <p>Commented by: {{ comment.user }}</p>
+          </div>
+        {% empty %}
+          <p>No comments yet.</p>
+        {% endfor %}
+      </div>
   </div>
 </div>
 {% empty %}
@@ -30,10 +42,25 @@
 {% endfor %}
 
 
+<script>
+    // add JavaScript to handle show/hide of comments section
+    const showCommentsButtons = document.querySelectorAll('.show-comments');
+    const commentSections = document.querySelectorAll('.comment-section');
+    const showMoreButtons = document.querySelectorAll('.show-more-comments');
+    showCommentsButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        commentSections[index].classList.toggle('show');
+        if (commentSections[index].classList.contains('show')) {
+          button.textContent = 'Hide comments';
+        } else {
+          button.textContent = 'Show comments';
+        }
+      });
+    });
+  </script>
 
 
 
 
 
-  
-{% endblock %} 
+{% endblock %}
