@@ -1,10 +1,14 @@
-from django.urls import path, include 
-from . import views #this is the path to the views.py file in the base app
-
-
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('profilePage/', views.profilePage, name='profilePage'), 
-    path('editProfilePage/', views.editProfilePage, name='editProfilePage'),
-]
 
+
+
+
+    #userProfile urls
+    path('userProfilePage/', views.userProfilePage, name='userProfilePage'),
+
+
+    
+]

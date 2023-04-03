@@ -1,47 +1,10 @@
+
 from django.shortcuts import render, redirect
-from django.views import generic
-from django.contrib.auth.decorators import login_required
-from .models import Profile
-from .forms import ProfileUpdateForm
+from django.contrib.auth import authenticate, login, logout  #used for User Authentication
+from django.contrib.auth.decorators import login_required #this is so we can restrict pages if you are not a logged in user
+from django.contrib import messages #used to send a flash message
 
-
-# Create your views here.
-def profilePage(request):
-    return render(request, 'userProfile/profilePage.html')
-
-
-def editProfilePage(request):
-    form = ProfileUpdateForm()
-    if request.method == 'POST':
-        form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
-        if form.is_valid():
-            profile = form.save(commit=False)
-            firstName = profile.firstName
-            lastName = profile.lastName
-            age = profile.age
-            bio = profile.bio
-            if 'profile_picture' in request.FILES:
-                profile.profile_picture = request.FILES['profile_picture']
-            profile.save()
-            return redirect('profilePage')
-    else:
-        form = ProfileUpdateForm(instance=request.user.profile)
-
-    context = {
-        'form': form
-    }
-    return render(request, 'userProfile/editProfilePage.html', context)
-
-
-
-       
- 
-
-
-
-
-
-
-    
-   
+# userProfile views
+def userProfilePage(request):
+    return render(request, 'userProfile/userProfilePage.html')
 

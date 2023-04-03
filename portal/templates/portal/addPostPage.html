@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 300px;">
+    <div class="row">
+        <div class="col">
+            <form method="POST" action"" enctype="multipart/form-data"  >
+                {% csrf_token %}
+                
+              
+                <div class="form-group p-1">
+                    <label for="{{form.postBody.id_for_label}}" style="color: #008bc8; font-weight: 500;">post body </label>
+                    <input type="text" name="{{form.postBody.name}}" style="height: 50px;" class="form-control" id="{{form.postBody.id_for_label}}" value="{{form.postBody.value}}">
+                </div>
+            
+              
+                <div class = "p-1">
+                    <button type="submit" class="btn" style="background-color: #008bc8; color: white; font-weight: 500;">Make post  </button>
+                    {{form.errors}} 
+                </div>     
+              </form>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
