@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Icon Link -->
-    <script src="https://kit.fontawesome.com/c9f66bf3cc.js" crossorigin="anonymous"> </script>
 
 
 
@@ -30,23 +29,21 @@
 <body>
 
  
-
-        
     {% if not request.user.is_authenticated %}
+    {% include 'navBar1.html' %}
+{% endif %}
 
-        
-        {% include 'navBar1.html' %}
-    
+{% if request.user.is_authenticated %}
+    {% include 'navBar2.html' %}
 
+    {% if request.resolver_match.url_name == 'portalPage' %}
+        {% include 'navBar3.html' %}
     {% endif %}
+{% endif %}
 
-    {% if request.user.is_authenticated %}
+    
 
-        {% include 'navBar2.html' %}
-        
-    
-    
-    {% endif %}
+
 
 
   

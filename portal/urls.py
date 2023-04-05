@@ -5,7 +5,7 @@ urlpatterns = [
 
     #portal urls
     path('portalPage/', views.portalPage, name='portalPage'),
-    path('addPostPage/', views.addPostPage, name='addPostPage'),
+    # path('addPostPage/', views.addPostPage, name='addPostPage'),
 
 
 

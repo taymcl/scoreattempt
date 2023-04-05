@@ -1,0 +1,65 @@
+{% load static %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+
+<style>
+    #test:hover {
+        background-color: #a8a8a856 !important;
+        border-radius: 10px !important;
+    }
+
+    body {
+        background-color: #ffffff !important;
+    }
+
+    #test {
+        text-decoration: none !important;
+        border-radius: 10px !important;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+</style>
+
+
+
+
+        <div class="col-2 rounded shadow-lg p-2" style="margin-top: 100px; position: fixed; background-color: rgba(233, 233, 233, 0.577); height: 2000px;">
+           
+            <ul class="nav flex-column text-break">
+                
+             
+
+
+                <a href="#">
+                    <li id="test" class="nav-item"> 
+                        <img id="profileButton" src="{{ request.user.profile.profile_picture.url }}" style="border-radius: 30px; width: 60px; height: 60px; margin-top: 5px; border-style: solid;">
+                        <p style="display: inline;">{{ user.username }}</p> 
+                    </li>
+                </a>
+
+                <a href="#">
+                    <li id="test" class="nav-item p-1 mt-3"> 
+                        <p style="display: inline;">Watch Videos </p> 
+                    </li>
+                </a>
+
+                <a href="#">
+                    <li id="test" class="nav-item p-1 mt-3"> 
+                        <p style="display: inline;">Play Games </p> 
+                    </li>
+                </a>
+                
+
+
+            
+              </ul>
+
+        </div>

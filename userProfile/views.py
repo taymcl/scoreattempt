@@ -1,10 +1,50 @@
 
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout  #used for User Authentication
-from django.contrib.auth.decorators import login_required #this is so we can restrict pages if you are not a logged in user
-from django.contrib import messages #used to send a flash message
+from django.views import generic
+from django.contrib.auth.decorators import login_required
+from .models import Profile
+from .forms import ProfileUpdateForm
+from portal.models import Posts
+from django.contrib.auth.models import User
+from django.db import models
 
-# userProfile views
+
+
+# Create your views here.
+
+
+
+@login_required
 def userProfilePage(request):
-    return render(request, 'userProfile/userProfilePage.html')
+    # Get the current user's posts
+    user_posts = Posts.objects.filter(user=request.user).order_by('-date')
+    
+    # Get the form for updating the user's profile
+    form = ProfileUpdateForm(instance=request.user.profile)
+    
+    if request.method == 'POST':
+        form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            firstName = profile.firstName
+            lastName = profile.lastName
+            age = profile.age
+            bio = profile.bio
+            if 'profile_picture' in request.FILES:
+                profile.profile_picture = request.FILES['profile_picture']
+            profile.save()
+            return redirect('userProfilePage')
+
+    context = {
+        'form': form,
+        'user_posts': user_posts,
+    }
+    
+    return render(request, 'userProfile/userProfilePage.html', context)
+
+
+
+
+
+
 

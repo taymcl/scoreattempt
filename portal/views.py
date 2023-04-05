@@ -19,12 +19,6 @@ from django.contrib.auth.models import User
 #portal views
 def portalPage(request):
     posts = Posts.objects.all().order_by('-date')
-    return render(request, 'portal/portalPage.html', {'posts': posts})
-
-
-
-def addPostPage(request):
-    form = createPostForm()
     if request.method == 'POST':
         form = createPostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -37,9 +31,10 @@ def addPostPage(request):
         form = createPostForm()
 
     context = {
-        'form': form
+        'form': form,
+        'posts': posts
     }
-    return render(request, 'portal/addPostPage.html', context)
+    return render(request, 'portal/portalPage.html', context)
 
 
 
