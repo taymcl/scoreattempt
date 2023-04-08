@@ -36,6 +36,10 @@ urlpatterns = [
     path('communityPage/', views.communityPage, name='communityPage'),
 
 
+    #video page urls
+    path('videoPage/', views.videoPage, name='videoPage'),
+
+
 
 
 

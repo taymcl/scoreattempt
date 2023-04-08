@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'userProfile',
     'community',
     'portal',
+    'video',
     
  
    
