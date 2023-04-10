@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p> </p>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 100px;">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <a id = "characterCard"  href="{% url 'registerSeagull' %}"> <img class = "shadow-lg" src="{% static 'images/characters/seal.png' %}" alt="seal" style="width: 300px; height: 300px; border-radius: 30px;"> </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
+
+
+

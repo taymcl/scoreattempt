@@ -81,3 +81,21 @@ def addPostPage(request):
 def videoPage(request):
     return render(request, 'video/videoPage.html', {})
 
+#buddyPages views
+def whale(request):
+    return render(request, 'buddyPages/whale.html')
+
+def turtle(request):
+    return render(request, 'buddyPages/turtle.html')
+
+def seal(request):
+    return render(request, 'buddyPages/seal.html')
+
+def seagull(request):
+    return render(request, 'buddyPages/seagull.html')
+
+def dolphin(request):
+    return render(request, 'buddyPages/dolphin.html')
+
+
+

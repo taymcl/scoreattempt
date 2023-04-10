@@ -9,6 +9,10 @@ from userProfile.models import Profile  #used to access our profile model
 from .models import Posts
 from django.contrib.auth.models import User
 
+#imports for delete post:
+from django.shortcuts import get_object_or_404, redirect, render
+from django.http import HttpResponseForbidden
+
 
 
 
@@ -20,13 +24,26 @@ from django.contrib.auth.models import User
 def portalPage(request):
     posts = Posts.objects.all().order_by('-date')
     if request.method == 'POST':
-        form = createPostForm(request.POST, request.FILES)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.user = request.user
-            postBody = post.postBody
-            post.save()
-            return redirect('portalPage')
+        # Check if the "delete_post" parameter is present in the POST request
+        if 'delete_post' in request.POST:
+            post_id = request.POST.get('delete_post')
+            try:
+                post = Posts.objects.get(id=post_id)
+                # Check if the current user is the owner of the post
+                if request.user == post.user:
+                    post.delete()
+                else:
+                    return HttpResponseForbidden()
+            except Posts.DoesNotExist:
+                pass
+        else:
+            form = createPostForm(request.POST, request.FILES)
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.user = request.user
+                postBody = post.postBody
+                post.save()
+                return redirect('portalPage')
     else:
         form = createPostForm()
 
@@ -35,6 +52,19 @@ def portalPage(request):
         'posts': posts
     }
     return render(request, 'portal/portalPage.html', context)
+
+
+def delete_post(request, pk):
+    post = get_object_or_404(Posts, pk=pk)
+    if request.user == post.user:
+        post.delete()
+        messages.success(request, 'Post has been deleted successfully!')
+    else:
+        messages.warning(request, 'You are not authorized to delete this post.')
+    return redirect('portalPage')
+
+
+
 
 
 

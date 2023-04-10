@@ -31,7 +31,7 @@
 
 
 
-        <div class="col-2 rounded shadow-lg p-2" style="margin-top: 100px; position: fixed; background-color: rgba(233, 233, 233, 0.577); height: 2000px;">
+        <div class="col-2 rounded shadow-lg p-2" style="margin-top: 100px; position: fixed; background-color: rgba(233, 233, 233, 0.859); height: 2000px;">
            
             <ul class="nav flex-column text-break">
                 
@@ -41,25 +41,25 @@
                 <a href="#">
                     <li id="test" class="nav-item"> 
                         <img id="profileButton" src="{{ request.user.profile.profile_picture.url }}" style="border-radius: 30px; width: 60px; height: 60px; margin-top: 5px; border-style: solid;">
-                        <p style="display: inline;">{{ user.username }}</p> 
+                        <p style="display: inline; color: #0F75BC; font-weight: bold;">{{ user.username }}</p> 
                     </li>
                 </a>
 
                 <a href="#">
                     <li id="test" class="nav-item p-1 mt-3"> 
-                        <a href="{% url 'videoPage' %}"  style="display: inline;">Watch Videos </a> 
+                        <a href="{% url 'videoPage' %}"  style="display: inline; color: #0F75BC; font-weight: bold;"> <i class="fa-solid fa-circle-play"></i> Watch Videos </a> 
                     </li>
                 </a>
 
                 <a href="#">
-                    <li id="test" class="nav-item p-1 mt-3"> 
-                        <p style="display: inline;">Play Games </p> 
+                    <li id="test" class="nav-item p-1 mt-3" style="color: #0F75BC; font-weight: bold;"> 
+                        <p style="display: inline;"> <i class="fa-solid fa-gamepad"></i> Play Games </p> 
                     </li>
                 </a>
-                
 
 
-            
               </ul>
+
+              
 
         </div>

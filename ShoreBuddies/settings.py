@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'community',
     'portal',
     'video',
+    'buddyPages'
     
  
    

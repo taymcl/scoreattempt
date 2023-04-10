@@ -8,6 +8,7 @@ urlpatterns = [
     path('userProfile/', include('userProfile.urls')), #used for userProfile urls
     path('portal/', include('portal.urls')), #used for userProfile urls
     path('video/', include('video.urls')), #used for userProfile urls
+    path('buddyPages/', include('buddyPages.urls')), #used for userProfile urls
 
     
 
