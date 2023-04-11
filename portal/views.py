@@ -64,6 +64,10 @@ def delete_post(request, pk):
     return redirect('portalPage')
 
 
+def regAnotherBuddy(request):
+    return render(request, 'portal/regAnotherBuddy.html')
+
+
 
 
 

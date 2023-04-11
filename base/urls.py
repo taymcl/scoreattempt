@@ -30,6 +30,8 @@ urlpatterns = [
     #portal urls
     path('portalPage/', views.portalPage, name='portalPage'),
     path('addPostPage/', views.addPostPage, name='addPostPage'),
+    path('regAnotherBuddy/', views.regAnotherBuddy, name='regAnotherBuddy'),
+    
 
 
     #community urls

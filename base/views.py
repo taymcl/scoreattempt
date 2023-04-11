@@ -77,6 +77,9 @@ def portalPage(request):
 def addPostPage(request):
     return render(request, 'portal/addPostPage.html')
 
+def regAnotherBuddy(request):
+    return render(request, 'portal/regAnotherBuddy.html')
+
 #video views
 def videoPage(request):
     return render(request, 'video/videoPage.html', {})
