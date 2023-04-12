@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     'community',
     'portal',
     'video',
-    'buddyPages'
+    'buddyPages',
+    'regBuddy2',
+    
     
  
    
@@ -125,6 +127,8 @@ TIME_ZONE = 'America/New_York'
 USE_I18N = True
 
 USE_TZ = True
+
+
 
 
 # Static files (CSS, JavaScript, Images)

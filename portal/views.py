@@ -13,6 +13,10 @@ from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, redirect, render
 from django.http import HttpResponseForbidden
 
+#test case
+from userReg.models import Buddies
+
+
 
 
 
@@ -66,6 +70,15 @@ def delete_post(request, pk):
 
 def regAnotherBuddy(request):
     return render(request, 'portal/regAnotherBuddy.html')
+
+
+
+
+# test case 
+def user_buddies(request):
+    user = request.user  # assuming the user is logged in
+    buddies = Buddies.objects.filter(user=user)
+    return render(request, 'portal/user_buddies.html', {'buddies': buddies})
 
 
 

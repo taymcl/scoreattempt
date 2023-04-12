@@ -47,6 +47,23 @@ urlpatterns = [
     path('seal/', views.seal, name='seal'),
     path('seagull/', views.seagull, name='seagull'),
     path('dolphin/', views.dolphin, name='dolphin'),
+
+
+
+    #regBuddy2 urls
+    path('registerDolphin2/', views.registerDolphin2, name='registerDolphin2'),
+    path('registerSeagull2/', views.registerSeagull2, name='registerSeagull2'),
+    path('registerSeal2/', views.registerSeal2, name='registerSeal2'),
+    path('registerTurtle2/', views.registerTurtle2, name='registerTurtle2'),
+    path('registerWhale2/', views.registerWhale2, name='registerWhale2'),
+
+
+
+
+    #test   
+    path('user_buddies/', views.user_buddies, name='user_buddies'),
+    
+   
     
 
 

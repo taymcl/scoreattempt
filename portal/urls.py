@@ -7,7 +7,7 @@ urlpatterns = [
     path('portalPage/', views.portalPage, name='portalPage'),
     path('delete/<int:pk>/', views.delete_post, name='delete_post'),
     path('regAnotherBuddy/', views.regAnotherBuddy, name='regAnotherBuddy'),
-
+    path('user_buddies/', views.user_buddies, name='user_buddies'),
 
     # path('addPostPage/', views.addPostPage, name='addPostPage'),
 

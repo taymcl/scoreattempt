@@ -102,3 +102,27 @@ def dolphin(request):
 
 
 
+#regBuddy2 views
+def registerDolphin2(request):
+    return render(request, 'regBuddy2/registerDolphin2.html')
+
+def registerSeagull2(request):
+    return render(request, 'regBuddy2/registerSeagull2.html')
+
+def registerSeal2(request):
+    return render(request, 'regBuddy2/registerSeal2.html')
+
+def registerTurtle2(request):
+    return render(request, 'regBuddy2/registerTurtle2.html')
+
+def registerWhale2(request):
+    return render(request, 'regBuddy2/registerWhale2.html')
+
+
+def user_buddies(request):
+    return render(request, 'portal/user_buddies.html')
+
+
+
+
+
