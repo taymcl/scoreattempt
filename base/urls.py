@@ -31,6 +31,7 @@ urlpatterns = [
     path('portalPage/', views.portalPage, name='portalPage'),
     path('addPostPage/', views.addPostPage, name='addPostPage'),
     path('regAnotherBuddy/', views.regAnotherBuddy, name='regAnotherBuddy'),
+    path('game/', views.game, name='game'),
     
 
 

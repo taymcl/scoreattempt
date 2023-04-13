@@ -71,6 +71,12 @@ def communityPage(request):
     return render(request, 'community/communityPage.html')
 
 #portal views
+
+def game(request):
+    return render(request, 'portal/game.html')
+
+
+
 def portalPage(request):
     return render(request, 'portal/portalPage.html')
 

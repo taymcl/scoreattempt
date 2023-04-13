@@ -136,7 +136,7 @@
             <!-- Posts -->
             {% for post in posts %}
     <div class=" shadow-lg mt-5 mx-5">
-        <div class="card" style="background-color: rgba(255, 255, 255, 0.836); border-radius: 30px; ">
+        <div class="card shadow-lg" style="background-color: rgba(255, 255, 255, 0.836); border-radius: 30px;  ">
             <div class="card-header">
                 <div>
                     {% if post.user == request.user %}
@@ -185,7 +185,7 @@
         <div class="col-3">
            
 
-            <div class="d-flex justify-content-center shadow-lg" style="margin-top: 10px; margin-left: 40px;">
+            <div class="d-flex justify-content-center" style="margin-top: 10px; margin-left: 40px;">
                 <img src="{% static 'images/extra/info1.jpeg' %}" style="height: 800px; width: 300px; border-radius: 20px;"> 
             </div>
 

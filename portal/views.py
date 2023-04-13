@@ -80,6 +80,9 @@ def user_buddies(request):
     buddies = Buddies.objects.filter(user=user)
     return render(request, 'portal/user_buddies.html', {'buddies': buddies})
 
+def game(request):
+    return render(request, 'portal/game.html')
+
 
 
 
