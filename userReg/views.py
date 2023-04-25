@@ -9,6 +9,8 @@ from django.contrib.auth.models import Group #used to access our groups
 from userProfile.models import Profile  #used to access our profile model
 from django.contrib.auth.models import User
 from .models import Characters #import our characters model
+from .models import Buddies #import our buddies model
+from .forms import registerAnotherBuddy #import our form for registering another buddy
 
 
 
@@ -37,8 +39,8 @@ def registerWhale(request):
                     profile = Profile.objects.create(user=user, bio='', firstName='', lastName='', age=None, profile_picture='static/images/profilePictures/default.jpg')
                     profile.save()
 
-                    character = 'W'
-                    Characters.objects.create(user=user, character=character, character_picture='static/images/characters/whale.png')
+                    buddy = 'whale'
+                    Buddies.objects.create(user=user, name=buddy, picture='static/images/characters/whale.png')
 
                     messages.success(request, 'Account was created for ' + username )
                     return redirect('landingPage')
@@ -67,8 +69,8 @@ def registerTurtle(request):
                     profile = Profile.objects.create(user=user, bio='', firstName='', lastName='', age=None, profile_picture='static/images/profilePictures/default.jpg')
                     profile.save()
 
-                    character = 'T'
-                    Characters.objects.create(user=user, character=character, character_picture='static/images/characters/turtle.png')
+                    buddy = 'turtle'
+                    Buddies.objects.create(user=user, name=buddy, picture='static/images/characters/turtle.png')
 
                     messages.success(request, 'Account was created for ' + username )
                     return redirect('landingPage')
@@ -98,8 +100,8 @@ def registerSeal(request):
                     profile = Profile.objects.create(user=user, bio='', firstName='', lastName='', age=None, profile_picture='static/images/profilePictures/default.jpg')
                     profile.save()
 
-                    character = 'S'
-                    Characters.objects.create(user=user, character=character, character_picture='static/images/characters/seal.png')
+                    buddy = 'seal'
+                    Buddies.objects.create(user=user, name=buddy, picture='static/images/characters/seal.png')
 
                     messages.success(request, 'Account was created for ' + username )
                     return redirect('landingPage')
@@ -127,8 +129,8 @@ def registerSeagull(request):
                     profile = Profile.objects.create(user=user, bio='', firstName='', lastName='', age=None, profile_picture='static/images/profilePictures/default.jpg')
                     profile.save()
 
-                    character = 'G'
-                    Characters.objects.create(user=user, character=character, character_picture='static/images/characters/seagull.png')
+                    buddy = 'seagull'
+                    Buddies.objects.create(user=user, name=buddy, picture='static/images/characters/seagull.png')
 
                     messages.success(request, 'Account was created for ' + username )
                     return redirect('landingPage')
@@ -156,8 +158,8 @@ def registerDolphin(request):
                     profile = Profile.objects.create(user=user, bio='', firstName='', lastName='', age=None, profile_picture='static/images/profilePictures/default.jpg')
                     profile.save()
 
-                    character = 'D'
-                    Characters.objects.create(user=user, character=character, character_picture='static/images/characters/dolphin.png')
+                    buddy = 'dolphin'
+                    Buddies.objects.create(user=user, name=buddy, picture='static/images/characters/dolphin.png')
 
                     messages.success(request, 'Account was created for ' + username )
                     return redirect('landingPage')
@@ -168,7 +170,7 @@ def registerDolphin(request):
 
 def registerFreemium(request):
     if request.user.is_authenticated: #if the user is authenticated
-        return redirect('portalPage') 
+        return redirect('freemiumPortal') 
     else:
         form = CreateUserForm() #import our form
         if request.method == 'POST': #checking for a post request
@@ -182,6 +184,10 @@ def registerFreemium(request):
                 return redirect('landingPage') # redirect user to login page
         context = {'form':form,} #context dictionary
         return render(request, 'userReg/registerFreemium.html', context)
+    
+
+
+#Register another buddy 
 
 
                   

@@ -7,6 +7,11 @@ from .forms import ProfileUpdateForm
 from portal.models import Posts
 from django.contrib.auth.models import User
 from django.db import models
+from userReg.models import Buddies
+from django.contrib import messages
+from django.shortcuts import get_object_or_404
+
+
 
 
 
@@ -18,7 +23,8 @@ from django.db import models
 def userProfilePage(request):
     # Get the current user's posts
     user_posts = Posts.objects.filter(user=request.user).order_by('-date')
-    
+    user = request.user
+    buddies = Buddies.objects.filter(user=user)
     # Get the form for updating the user's profile
     form = ProfileUpdateForm(instance=request.user.profile)
     
@@ -38,9 +44,14 @@ def userProfilePage(request):
     context = {
         'form': form,
         'user_posts': user_posts,
+        'buddies': buddies,
     }
     
     return render(request, 'userProfile/userProfilePage.html', context)
+
+
+
+
 
 
 

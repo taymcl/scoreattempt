@@ -1,4 +1,4 @@
-# Imports
+# Imports 
 from django.shortcuts import render, redirect
 from .forms import createPostForm #used for our user creation form
 from django.contrib.auth import authenticate, login, logout  #used for User Authentication
@@ -82,6 +82,10 @@ def user_buddies(request):
 
 def game(request):
     return render(request, 'portal/game.html')
+
+
+def freemiumPortal(request):
+    return render(request, 'portal/freemiumPortal.html')
 
 
 

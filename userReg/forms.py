@@ -14,3 +14,11 @@ class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2', 'registration_code']
+
+
+
+
+
+
+class registerAnotherBuddy(forms.Form):
+    registration_code = forms.CharField(max_length=10)

@@ -37,7 +37,7 @@
 {% if request.user.is_authenticated %}
     {% include 'navBar2.html' %}
 
-    {% if request.resolver_match.url_name == 'portalPage' %}
+    {% if request.resolver_match.url_name == 'portalPage' or request.resolver_match.url_name == 'videoPage'  %}
         {% include 'navBar3.html' %}
     {% endif %}
 {% endif %}

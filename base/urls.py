@@ -32,6 +32,7 @@ urlpatterns = [
     path('addPostPage/', views.addPostPage, name='addPostPage'),
     path('regAnotherBuddy/', views.regAnotherBuddy, name='regAnotherBuddy'),
     path('game/', views.game, name='game'),
+    path('freemiumPortal/', views.freemiumPortal, name='freemiumPortal'),
     
 
 
@@ -41,7 +42,8 @@ urlpatterns = [
 
     #video page urls
     path('videoPage/', views.videoPage, name='videoPage'),
-
+    path('video_detail/', views.video_detail, name='video_detail'),
+    
     #buddyPages urls
     path('whale/', views.whale, name='whale'),
     path('turtle/', views.turtle, name='turtle'),

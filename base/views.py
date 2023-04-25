@@ -86,9 +86,19 @@ def addPostPage(request):
 def regAnotherBuddy(request):
     return render(request, 'portal/regAnotherBuddy.html')
 
+def freemiumPortal(request):
+    return render(request, 'portal/freemiumPortal.html')
+
 #video views
 def videoPage(request):
     return render(request, 'video/videoPage.html', {})
+
+def video_detail(request):
+    return render(request, 'video/video_detail.html', {})
+
+
+
+
 
 #buddyPages views
 def whale(request):

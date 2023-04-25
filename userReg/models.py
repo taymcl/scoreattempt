@@ -21,6 +21,8 @@ class Characters(models.Model):
 from django.contrib.auth.models import User
 from django.db import models
 
+
+
 class Buddies(models.Model):
     BUDDY_CHOICES = (
         ('whale', 'Whale'),
