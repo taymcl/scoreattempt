@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Model for User profile
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
@@ -9,8 +10,14 @@ class Profile(models.Model):
     bio = models.TextField(null=True)
     age = models.IntegerField(null=True)
     profile_picture = models.ImageField(upload_to='static/images', null=True, blank=True)
-    
 
+    def __str__(self):
+        return str(self.user)
+
+
+class HighScores(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='highscore', null=True)
+    score = models.IntegerField()
 
     def __str__(self):
         return str(self.user)

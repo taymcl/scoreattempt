@@ -1,30 +1,24 @@
 # Imports 
 from django.shortcuts import render, redirect
-from .forms import createPostForm #used for our user creation form
-from django.contrib.auth import authenticate, login, logout  #used for User Authentication
-from django.contrib.auth.decorators import login_required #this is so we can restrict pages if you are not a logged in user
-from django.contrib import messages #used to send a flash message
-from django.contrib.auth.models import Group #used to access our groups
-from userProfile.models import Profile  #used to access our profile model
+from .forms import createPostForm  # used for our user creation form
+from django.contrib.auth import authenticate, login, logout  # used for User Authentication
+from django.contrib.auth.decorators import \
+    login_required  # this is so we can restrict pages if you are not a logged in user
+from django.contrib import messages  # used to send a flash message
+from django.contrib.auth.models import Group  # used to access our groups
+from userProfile.models import Profile  # used to access our profile model
 from .models import Posts
 from django.contrib.auth.models import User
 
-#imports for delete post:
+# imports for delete post:
 from django.shortcuts import get_object_or_404, redirect, render
 from django.http import HttpResponseForbidden
 
-#test case
+# test case
 from userReg.models import Buddies
 
 
-
-
-
-
-
-
-
-#portal views
+# portal views
 def portalPage(request):
     posts = Posts.objects.all().order_by('-date')
     if request.method == 'POST':
@@ -72,25 +66,17 @@ def regAnotherBuddy(request):
     return render(request, 'portal/regAnotherBuddy.html')
 
 
-
-
-# test case 
+# test case
 def user_buddies(request):
     user = request.user  # assuming the user is logged in
     buddies = Buddies.objects.filter(user=user)
     return render(request, 'portal/user_buddies.html', {'buddies': buddies})
 
+
+@login_required
 def game(request):
     return render(request, 'portal/game.html')
 
 
 def freemiumPortal(request):
     return render(request, 'portal/freemiumPortal.html')
-
-
-
-
-
-
-
-

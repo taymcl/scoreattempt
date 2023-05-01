@@ -28,6 +28,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CORS_ORIGIN_ALLOW_ALL = True  # Used to allow cross-origin requests for the game scores
+
+APPEND_SLASH = False
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'http://localhost:8002',
+    'http://127.0.0.1:8002',
+]
+
 
 # Application definition
 
@@ -48,6 +59,7 @@ INSTALLED_APPS = [
     'video',
     'buddyPages',
     'regBuddy2',
+    'corsheaders'
     
     
  
@@ -62,6 +74,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'ShoreBuddies.urls'
